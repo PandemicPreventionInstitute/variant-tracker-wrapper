@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.navbarPopper {
+  /* margin-top: -1110px !important; */
+  top: 0px !important;
+  position: absolute !important;
+  /* margin-left: -300px !important; */
+}
+
+.dataDownloadPopper {
+  margin-top: -640px !important;
+  margin-left: -500px !important;
+}
+
+.onboardingButton {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  padding-top: 20px !important;
+  padding-right: 70px !important;
+  color: white !important;
+  /* float: right; */
+}
+
+.helpButton {
+  position: absolute !important;
+  top: 1;
+  right: 0;
+  padding-top: 20px !important;
+  padding-right: 20px !important;
+  color: white !important;
+  /* padding: 10px; */
+}
+
+.downloadDataAnchor {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  padding-top: 20px !important;
+  padding-right: 20px !important;
+}
