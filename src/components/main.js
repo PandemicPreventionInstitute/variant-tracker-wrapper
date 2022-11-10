@@ -251,7 +251,7 @@ export default function MiniDrawer() {
           <HelpOutlinedIcon ref={gridHelpButtonRef}/>
         </IconButton>
       
-        <iframe id="shiny_vt" /* src="http://ppi-variant-dynamics-prod-39a4c5a9f260fa0a.elb.us-east-1.amazonaws.com/" */ src="http://127.0.0.1:5153" title="RShiny VT" height="100%"/* {window.innerHeight} */ width="100%" frameBorder="0">
+        <iframe id="shiny_vt" src="http://ppi-variant-dynamics-prod-39a4c5a9f260fa0a.elb.us-east-1.amazonaws.com/" /* src="http://127.0.0.1:5153" */ title="RShiny VT" height="100%"/* {window.innerHeight} */ width="100%" frameBorder="0">
             
           
             <Onboarding handleTutorialStep1={handleTutorialStep1} onboardingUserOpen={onboardingUserOpen} setOnboardingUserOpen={setOnboardingUserOpen}/>
