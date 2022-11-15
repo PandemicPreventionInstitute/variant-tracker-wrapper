@@ -11,6 +11,8 @@ import Box from '@mui/material/Box';
 import styles from '../css/helpDialog.module.css';
 import BubbleChart from '../assets/bubble_chart.png';
 import FitnessTable from '../assets/fitness_table.png';
+import VariantFitness from '../assets/variant_fitness.png';
+import VariantProportions from '../assets/variant_proportions.png';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -94,7 +96,8 @@ export default function HelpDialogContent() {
           <Tab label="Variant Fitness" {...a11yProps(0)} />
           <Tab label="Global Overview" {...a11yProps(1)} />
           <Tab label="Country Selector" {...a11yProps(2)} />
-          <Tab label="Key Countries" {...a11yProps(3)} />
+          <Tab label="State Selector" {...a11yProps(3)} />
+          <Tab label="Key Countries" {...a11yProps(4)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -103,18 +106,23 @@ export default function HelpDialogContent() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-            <h1 className={styles.mainText}>How to Interpret the Fitness Charts</h1>
-            <img src={BubbleChart} className={styles.image} alt='Bubble chart'/>
-            <img src={FitnessTable} className={styles.image} alt='Fitness table'/>
+            <h1 className={styles.mainText}>How to Read the Fitness Charts</h1>
+            {/* <img src={BubbleChart} className={styles.image} alt='Bubble chart'/>
+            <img src={FitnessTable} className={styles.image} alt='Fitness table'/> */}
+            <img src={VariantFitness} className={styles.image} alt='Variant fitness explanations'/>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-            <h1 className={styles.mainText}>How to Interpret the Global Map</h1>
+            <h1 className={styles.mainText}>How to Use the Global Map</h1>
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-            <h1 className={styles.mainText}>How to Interpret the Country Selector</h1>
+            <h1 className={styles.mainText}>How to Use the Country Selector</h1>
+            <img src={VariantProportions} className={styles.image} alt='Variant proportions explanations'/>
         </TabPanel>
         <TabPanel value={value} index={3} dir={theme.direction}>
-            <h1 className={styles.mainText}>How to Interpret the Key Countries</h1>
+            <h1 className={styles.mainText}>How to Use the State Selector</h1>
+        </TabPanel>
+        <TabPanel value={value} index={4} dir={theme.direction}>
+            <h1 className={styles.mainText}>How to Read the Key Countries</h1>
         </TabPanel>
       </SwipeableViews>
     </Box>
