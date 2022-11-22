@@ -133,15 +133,17 @@ export default function MiniDrawer() {
   }
 
   const handleTutorialStep3 = () => {
-    setOnboardingButtonAnchorEl(onboardingButtonRef.current);
+    setDataDownloadAnchorEl(dataDownloadRef.current);   
     setNavbarPopperOpen(false);
-    setOnboardingButtonPopperOpen(true);
+    setDataDownloadPopperOpen(true);
+    
   }
 
   const handleTutorialStep4 = () => {
-    setDataDownloadAnchorEl(dataDownloadRef.current);
-    setDataDownloadPopperOpen(true);
-    setOnboardingButtonPopperOpen(false);
+    setOnboardingButtonAnchorEl(onboardingButtonRef.current);    
+    setOnboardingButtonPopperOpen(true);
+    setDataDownloadPopperOpen(false);
+    
   }
 
   /* Help slides */
@@ -254,7 +256,7 @@ export default function MiniDrawer() {
                 <Fade {...TransitionProps}>
                 <OnboardingBox>
                     <Arrow className='MuiPopper-arrow' ref={setArrowRef3} />
-                    <OnboardingSteps step3={true} handleOnboardingButtonPopperClose={handleOnboardingButtonPopperClose} handleTutorialStep4={handleTutorialStep4}/>
+                    <OnboardingSteps step4={true} handleOnboardingButtonPopperClose={handleOnboardingButtonPopperClose} />
                 </OnboardingBox>
                 </Fade>
             )}
@@ -293,7 +295,7 @@ export default function MiniDrawer() {
                 <Fade {...TransitionProps}>
                 <OnboardingBox>
                     <Arrow className='MuiPopper-arrow' sx={{top: '100px !important'}} ref={setArrowRef4} />
-                    <OnboardingSteps step4={true} handleDataDownloadPopperClose={handleDataDownloadPopperClose}/>
+                    <OnboardingSteps step3={true} handleDataDownloadPopperClose={handleDataDownloadPopperClose} handleTutorialStep4={handleTutorialStep4}/>
                 </OnboardingBox>
                 </Fade>
             )}

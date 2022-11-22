@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { RoomOutlined, PeopleAltOutlined, ZoomInOutlined } from '@mui/icons-material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Button from '@mui/material/Button';
 
@@ -53,13 +52,13 @@ export default function OnboardingSteps(props) {
                 </StepBox> : null}
                 {props.step3 ? 
                 <StepBox>
-                    <h3 className="serif">View the onboarding</h3>
-                    <p>Click on the onboarding button to go through the tutorial steps</p>
+                    <h3 className="serif">Download the data</h3>
+                    <p>Click on the 'Download data here' button to download a CSV of the data used to create the visualizations</p>
                 </StepBox> : null}
                 {props.step4 ? 
                 <StepBox>
-                    <h3 className="serif">Download the data</h3>
-                    <p>Click on the 'Download data here' button to download a CSV of the data used to create the visualizations</p>
+                    <h3 className="serif">View the onboarding</h3>
+                    <p>Click on the onboarding button to go through these tutorial steps again</p>
                 </StepBox> : null}
             </OnboardingBox1>
                          
@@ -73,7 +72,7 @@ export default function OnboardingSteps(props) {
                 {props.step4 ? 
                     (<Box sx={{display: 'flex'}}>              
                         <Button 
-                        onClick={props.handleDataDownloadPopperClose} >
+                        onClick={props.handleOnboardingButtonPopperClose} >
                         FINISH
                         </Button>
                     </Box>) : 

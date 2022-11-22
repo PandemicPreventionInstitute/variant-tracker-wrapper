@@ -18,6 +18,15 @@
     height: auto;
     width: 100%;
 }
+.smallImage {
+    display: block;
+    opacity: 1;
+    height: auto;
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 18px;
+}
 
 .dialogContent {
     position: relative;

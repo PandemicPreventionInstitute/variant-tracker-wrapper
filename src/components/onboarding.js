@@ -12,6 +12,9 @@ import Checkbox from '@mui/material/Checkbox';
 import { styled } from '@mui/material/styles';
 import { useLocalStorage } from './localStorage';
 import Coronavirus from '../assets/coronavirus-bacteria-svgrepo-com.svg';
+import Laptop from '../assets/laptop.svg';
+import RotatePhone from '../assets/smartphone-rotate.svg';
+import { Grid } from '@mui/material';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -105,6 +108,18 @@ export default function Onboarding(props) {
                         <h3 className={styles.dialogText}>{'Some main blurb about how the user can use the Variant Tracker'}</h3> 
                         <p className={styles.dialogText}>The Variant Tracker... (the what / why, ex: leverages data, science, and technology to quickly estimate the probability that one or more infected
                          individuals will be present at an event or social gathering given the size and reported cases in the area).</p>
+                        <Grid container spacing={0} sx={{justifyContent: 'center'}}>
+                            <Grid item xs={5} sx={{alignItems: 'center !important'}}>
+                                <img src={Laptop} className={styles.smallImage} alt='Laptop'/>                                
+                            </Grid>
+                            <Grid item xs={5} >
+                                <img src={RotatePhone} className={styles.smallImage} alt='Rotated phone'/>
+                            </Grid>                           
+                            <Grid item xs={12} >
+                                <p >Optimal Viewing: The Variant Tracker is best viewed on a desktop, 
+                                if using a mobile phone rotate the device horizontally for best experience.</p>
+                            </Grid>                          
+                        </Grid>
                     </div>
                 </DialogContent>
                 <DialogActions>

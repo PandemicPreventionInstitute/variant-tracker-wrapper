@@ -11,8 +11,6 @@ import styles from '../css/helpDialog.module.css';
 import { styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
 import ChevronRight from '@mui/icons-material/ChevronRight';
-import BubbleChart from '../assets/bubble_chart.png';
-import FitnessTable from '../assets/fitness_table.png';
 import HelpDialogContent from './helpDialogContent';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -115,36 +113,11 @@ export default function Help(props) {
                 ) : null}
                 </DialogTitle>
                 <DialogContent>
-                    <div className={styles.dialogContent}>                   
-                        {/* <h1 className={styles.mainText}>How to Interpret the Fitness Charts</h1>
-                        <img src={BubbleChart} className={styles.image} alt='Bubble chart'/>
-                        <img src={FitnessTable} className={styles.image} alt='Fitness table'/>                    */}
+                    <div className={styles.dialogContent}>
                         <HelpDialogContent />
                     </div>
                     
                 </DialogContent>
-                {/* <BottomNavBox>
-                    <Box>
-                        {fitnessSlide ? <h4>1/4</h4> : null}
-                        {globalSlide ? <h4>2/4</h4> : null}
-                        {countrySelectSlide ? <h4>3/4</h4> : null}
-                        {keyCountriesSlide ? <h4>4/4</h4> : null}
-                    </Box>
-                    {!keyCountriesSlide ?
-                        <Box sx={{display: 'flex'}}>
-                            <Button 
-                                onClick={
-                                    fitnessSlide ? handleFitnessChange : 
-                                    globalSlide ? handleGlobalChange :
-                                    countrySelectSlide ? handleCountrySelectChange :
-                                    null
-                                } 
-                                sx={{color: '#305252'}}>
-                                NEXT <ChevronRight />
-                            </Button>
-                        </Box> 
-                    : null}       
-                </BottomNavBox> */}
             </FitnessHelpDialog>
         </div>
     );

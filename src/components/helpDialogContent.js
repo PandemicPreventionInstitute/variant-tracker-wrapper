@@ -9,10 +9,11 @@ import Typography from '@mui/material/Typography';
 import { green } from '@mui/material/colors';
 import Box from '@mui/material/Box';
 import styles from '../css/helpDialog.module.css';
-import BubbleChart from '../assets/bubble_chart.png';
-import FitnessTable from '../assets/fitness_table.png';
 import VariantFitness from '../assets/variant_fitness.png';
-import VariantProportions from '../assets/variant_proportions.png';
+import Cases from '../assets/cases.png';
+import Prevalence from '../assets/prevalence.png';
+import VariantRisk from '../assets/variant_risk.png';
+import FitnessTable from '../assets/fitness_table.png';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -94,10 +95,10 @@ export default function HelpDialogContent() {
           aria-label="action tabs example"
         >
           <Tab label="Variant Fitness" {...a11yProps(0)} />
-          <Tab label="Global Overview" {...a11yProps(1)} />
-          <Tab label="Country Selector" {...a11yProps(2)} />
-          <Tab label="State Selector" {...a11yProps(3)} />
-          <Tab label="Key Countries" {...a11yProps(4)} />
+          <Tab label="Variant Risk Assessment" {...a11yProps(1)} />
+          <Tab label="Variant Fitness Table" {...a11yProps(2)} />
+          <Tab label="Variant Prevalence" {...a11yProps(3)} />
+          <Tab label="Inferred Cases" {...a11yProps(4)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -106,23 +107,24 @@ export default function HelpDialogContent() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-            <h1 className={styles.mainText}>How to Read the Fitness Charts</h1>
-            {/* <img src={BubbleChart} className={styles.image} alt='Bubble chart'/>
-            <img src={FitnessTable} className={styles.image} alt='Fitness table'/> */}
-            <img src={VariantFitness} className={styles.image} alt='Variant fitness explanations'/>
+            <h1 className={styles.mainText}>How to Read the Variant Fitness Chart</h1>
+            <img src={VariantFitness} className={styles.image} alt='Variant fitness chart explanation'/>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-            <h1 className={styles.mainText}>How to Use the Global Map</h1>
+            <h1 className={styles.mainText}>How to Read the Variant Risk Assessment</h1>
+            <img src={VariantRisk} className={styles.image} alt='Variant risk assessment explanation'/>
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-            <h1 className={styles.mainText}>How to Use the Country Selector</h1>
-            <img src={VariantProportions} className={styles.image} alt='Variant proportions explanations'/>
+            <h1 className={styles.mainText}>How to Read and Use the Variant Fitness Table</h1>
+            <img src={FitnessTable} className={styles.image} alt='Variant fitness table explanation'/>
         </TabPanel>
         <TabPanel value={value} index={3} dir={theme.direction}>
-            <h1 className={styles.mainText}>How to Use the State Selector</h1>
+            <h1 className={styles.mainText}>How to Read and Use the Variant Prevalence</h1>
+            <img src={Prevalence} className={styles.image} alt='Variant prevalence explanation'/>
         </TabPanel>
         <TabPanel value={value} index={4} dir={theme.direction}>
-            <h1 className={styles.mainText}>How to Read the Key Countries</h1>
+            <h1 className={styles.mainText}>How to Read and Use the Inferred Cases</h1>
+            <img src={Cases} className={styles.image} alt='Inferred cases explanation'/>
         </TabPanel>
       </SwipeableViews>
     </Box>
