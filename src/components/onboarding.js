@@ -105,9 +105,11 @@ export default function Onboarding(props) {
                             <img src={Coronavirus} className={styles.image} alt='Masked elbow bump'/>
                         </div>
                         <h1 className={styles.welcome}>Welcome to the Global COVID-19 Variant Tracker! </h1>
-                        <h3 className={styles.dialogText}>{'Some main blurb about how the user can use the Variant Tracker'}</h3> 
-                        <p className={styles.dialogText}>The Variant Tracker... (the what / why, ex: leverages data, science, and technology to quickly estimate the probability that one or more infected
-                         individuals will be present at an event or social gathering given the size and reported cases in the area).</p>
+                        <h3 className={styles.dialogText}>Gain a better understanding of global SARS-CoV-2 emergence and evolutionary variant transmission dynamics 
+                         in specific regions across the world</h3> 
+                        <p className={styles.dialogText}>The Variant Tracker leverages SARS-CoV-2 sequencing data to provide users with global and 
+                        country-specific transmission dynamics.The underlying model allows users to explore the latest updates on the COVID-19 variants 
+                        by leveraging data from countries with high-sequencing capacity to provide real-time estimates for countries with less capacity. </p>
                         <Grid container spacing={0} sx={{justifyContent: 'center'}}>
                             <Grid item xs={5} sx={{alignItems: 'center !important'}}>
                                 <img src={Laptop} className={styles.smallImage} alt='Laptop'/>                                

@@ -53,7 +53,7 @@ export default function OnboardingSteps(props) {
                 {props.step3 ? 
                 <StepBox>
                     <h3 className="serif">Download the data</h3>
-                    <p>Click on the 'Download data here' button to download a CSV of the data used to create the visualizations</p>
+                    <p>Click on the 'About' text at the top to go to the About section of the page and download a CSV of the data used to create the visualizations</p>
                 </StepBox> : null}
                 {props.step4 ? 
                 <StepBox>
@@ -78,7 +78,7 @@ export default function OnboardingSteps(props) {
                     </Box>) : 
                     (<Box sx={{display: 'flex'}}>
                         <Button 
-                            onClick={props.step1 ? props.handleHelpButtonPopperClose : (props.step2 ? props.handleNavbarPopperClose : props.handleOnboardingButtonPopperClose)} 
+                            onClick={props.step1 ? props.handleHelpButtonPopperClose : (props.step2 ? props.handleNavbarPopperClose : props.handleDataDownloadPopperClose)} 
                             sx={{color: 'inherit'}}>SKIP ALL
                         </Button>
                         <Button 

@@ -44,7 +44,7 @@ const OnboardingPopper = styled(Popper)(({ theme }) => ({
   '&[data-popper-placement*="bottom"] .MuiPopper-arrow': {
     top: 0,
     left: 0,
-    marginTop: '0.38em',
+    marginTop: '0.4em',
     width: '3em',
     height: '1em',
     '&::before': {
@@ -133,7 +133,7 @@ export default function MiniDrawer() {
   }
 
   const handleTutorialStep3 = () => {
-    setDataDownloadAnchorEl(dataDownloadRef.current);   
+    setDataDownloadAnchorEl(onboardingButtonRef.current);   
     setNavbarPopperOpen(false);
     setDataDownloadPopperOpen(true);
     
@@ -143,7 +143,6 @@ export default function MiniDrawer() {
     setOnboardingButtonAnchorEl(onboardingButtonRef.current);    
     setOnboardingButtonPopperOpen(true);
     setDataDownloadPopperOpen(false);
-    
   }
 
   /* Help slides */
@@ -203,7 +202,7 @@ export default function MiniDrawer() {
             </OnboardingPopper>
         </Backdrop>
       
-        <Backdrop open={navbarPopperOpen} >
+        <Backdrop open={navbarPopperOpen}>
             <OnboardingPopper 
             open={navbarPopperOpen} 
             anchorEl={navbarAnchorEl} 
@@ -267,9 +266,8 @@ export default function MiniDrawer() {
             <OnboardingPopper 
             open={dataDownloadPopperOpen} 
             anchorEl={dataDownloadAnchorEl} 
-            placement='right' 
+            placement='bottom' 
             transition 
-            // className='dataDownloadPopper'
             modifiers={[
                 {
                     name: 'arrow',
@@ -282,19 +280,14 @@ export default function MiniDrawer() {
                     name: "offset",
                     enabled: true,
                     options: {
-                      offset: [(window.innerHeight <= 800 ? (window.innerHeight / 1.5) : 
-                      (window.innerHeight <= 1050 ? (window.innerHeight / 1.85) :
-                      (window.innerHeight <= 1300 ? (window.innerHeight / 1.75) : 
-                      (window.innerHeight / 2.55))))
-                        , (window.innerWidth <= 1500 ? (window.innerWidth / 5.3) : 
-                        (window.innerWidth / 3.2))],
+                      offset: [-(window.innerWidth / 1.5), 0],
                     }
-                  }                 
+                  }       
             ]}>
             {({ TransitionProps }) => (
                 <Fade {...TransitionProps}>
                 <OnboardingBox>
-                    <Arrow className='MuiPopper-arrow' sx={{top: '100px !important'}} ref={setArrowRef4} />
+                    <Arrow className='MuiPopper-arrow' sx={{left: '-155px !important'}} ref={setArrowRef4} />
                     <OnboardingSteps step3={true} handleDataDownloadPopperClose={handleDataDownloadPopperClose} handleTutorialStep4={handleTutorialStep4}/>
                 </OnboardingBox>
                 </Fade>
