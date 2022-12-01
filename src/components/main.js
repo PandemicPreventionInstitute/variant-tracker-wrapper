@@ -83,6 +83,7 @@ export default function MiniDrawer() {
   const gridHelpButtonRef = React.useRef();
   const onboardingButtonRef = React.useRef();
   const dataDownloadRef = React.useRef();
+  const variantFitnessRef = React.useRef();
 
   const [onboardingUserOpen, setOnboardingUserOpen] = React.useState(true);
 
@@ -90,16 +91,19 @@ export default function MiniDrawer() {
   const [onboardingButtonPopperOpen, setOnboardingButtonPopperOpen] = React.useState(false);
   const [navbarPopperOpen, setNavbarPopperOpen] = React.useState(false);
   const [dataDownloadPopperOpen, setDataDownloadPopperOpen] = React.useState(false);
+  const [variantFitnessPopperOpen, setVariantFitnessPopperOpen] = React.useState(false);
 
   const [arrowRef1, setArrowRef1] = React.useState(null);
   const [arrowRef2, setArrowRef2] = React.useState(null);
   const [arrowRef3, setArrowRef3] = React.useState(null);
   const [arrowRef4, setArrowRef4] = React.useState(null);
+  const [arrowRef5, setArrowRef5] = React.useState(null);
 
   const [helpButtonAnchorEl, setHelpButtonAnchorEl] = React.useState(null);
   const [navbarAnchorEl, setNavbarAnchorEl] = React.useState(null);
   const [onboardingButtonAnchorEl, setOnboardingButtonAnchorEl] = React.useState(null);
   const [dataDownloadAnchorEl, setDataDownloadAnchorEl] = React.useState(null);
+  const [variantFitnessAnchorEl, setVariantFitnessAnchorEl] = React.useState(null);
   
   const handleOnboardingUserOpen = () => {
     setOnboardingUserOpen(true);
@@ -119,7 +123,11 @@ export default function MiniDrawer() {
 
   const handleDataDownloadPopperClose = () => {
     setDataDownloadPopperOpen(false);
-}
+  }
+
+  const handleVariantFitnessPopperClose = () => {
+    setVariantFitnessPopperOpen(false);
+  }
 
   const handleTutorialStep1 = () => {
     setHelpButtonAnchorEl(gridHelpButtonRef.current);
@@ -136,13 +144,18 @@ export default function MiniDrawer() {
     setDataDownloadAnchorEl(onboardingButtonRef.current);   
     setNavbarPopperOpen(false);
     setDataDownloadPopperOpen(true);
-    
   }
 
   const handleTutorialStep4 = () => {
+    setVariantFitnessAnchorEl(onboardingButtonRef.current);   
+    setVariantFitnessPopperOpen(true);
+    setDataDownloadPopperOpen(false);
+  }
+
+  const handleTutorialStep5 = () => {
     setOnboardingButtonAnchorEl(onboardingButtonRef.current);    
     setOnboardingButtonPopperOpen(true);
-    setDataDownloadPopperOpen(false);
+    setVariantFitnessPopperOpen(false);
   }
 
   /* Help slides */
@@ -234,33 +247,7 @@ export default function MiniDrawer() {
                 </Fade>
             )}
             </OnboardingPopper>
-        </Backdrop>
-
-        <Backdrop open={onboardingButtonPopperOpen} >
-            <OnboardingPopper 
-            open={onboardingButtonPopperOpen} 
-            anchorEl={onboardingButtonAnchorEl} 
-            placement='bottom' 
-            transition 
-            modifiers={[
-                {
-                    name: 'arrow',
-                    enabled: true,
-                    options: {
-                        element: arrowRef3,
-                    }
-                }
-            ]}>
-            {({ TransitionProps }) => (
-                <Fade {...TransitionProps}>
-                <OnboardingBox>
-                    <Arrow className='MuiPopper-arrow' ref={setArrowRef3} />
-                    <OnboardingSteps step4={true} handleOnboardingButtonPopperClose={handleOnboardingButtonPopperClose} />
-                </OnboardingBox>
-                </Fade>
-            )}
-            </OnboardingPopper>
-        </Backdrop>
+        </Backdrop>      
 
         <Backdrop open={dataDownloadPopperOpen} >
             <OnboardingPopper 
@@ -289,6 +276,65 @@ export default function MiniDrawer() {
                 <OnboardingBox>
                     <Arrow className='MuiPopper-arrow' sx={{left: '-155px !important'}} ref={setArrowRef4} />
                     <OnboardingSteps step3={true} handleDataDownloadPopperClose={handleDataDownloadPopperClose} handleTutorialStep4={handleTutorialStep4}/>
+                </OnboardingBox>
+                </Fade>
+            )}
+            </OnboardingPopper>
+        </Backdrop>
+
+        <Backdrop open={variantFitnessPopperOpen} >
+            <OnboardingPopper 
+            open={variantFitnessPopperOpen} 
+            anchorEl={variantFitnessAnchorEl} 
+            placement='bottom' 
+            transition 
+            modifiers={[
+                {
+                    name: 'arrow',
+                    enabled: true,
+                    options: {
+                        element: arrowRef5,
+                    }
+                  },
+                  {
+                    name: "offset",
+                    enabled: true,
+                    options: {
+                      offset: [-(window.innerWidth / 1.5), (window.innerHeight / 2.7)],
+                    }
+                  }      
+            ]}>
+            {({ TransitionProps }) => (
+                <Fade {...TransitionProps}>
+                <OnboardingBox>
+                    <Arrow className='MuiPopper-arrow' sx={{left: '-170px !important'}} ref={setArrowRef5} />
+                    <OnboardingSteps step4={true} handleVariantFitnessPopperClose={handleVariantFitnessPopperClose} handleTutorialStep5={handleTutorialStep5}/>
+                </OnboardingBox>
+                </Fade>
+            )}
+            </OnboardingPopper>
+        </Backdrop>
+
+        <Backdrop open={onboardingButtonPopperOpen} >
+            <OnboardingPopper 
+            open={onboardingButtonPopperOpen} 
+            anchorEl={onboardingButtonAnchorEl} 
+            placement='bottom' 
+            transition 
+            modifiers={[
+                {
+                    name: 'arrow',
+                    enabled: true,
+                    options: {
+                        element: arrowRef3,
+                    }
+                }
+            ]}>
+            {({ TransitionProps }) => (
+                <Fade {...TransitionProps}>
+                <OnboardingBox>
+                    <Arrow className='MuiPopper-arrow' ref={setArrowRef3} />
+                    <OnboardingSteps step5={true} handleOnboardingButtonPopperClose={handleOnboardingButtonPopperClose} />
                 </OnboardingBox>
                 </Fade>
             )}

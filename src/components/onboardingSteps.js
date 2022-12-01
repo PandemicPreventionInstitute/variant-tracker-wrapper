@@ -35,11 +35,6 @@ export default function OnboardingSteps(props) {
     return (
         <OnboardingBox1>
             <OnboardingBox1 sx={{flexFlow: 'row nowrap'}}>
-                {/* <Box>
-                    {props.step1 ? <RoomOutlined /> : null}
-                    {props.step2 ? <PeopleAltOutlined /> : null}
-                    {props.step3 ? <ZoomInOutlined /> : null}
-                </Box>             */}
                 {props.step1 ? 
                 <StepBox>
                     <h3 className="serif">Learn more about the figures</h3>
@@ -57,6 +52,11 @@ export default function OnboardingSteps(props) {
                 </StepBox> : null}
                 {props.step4 ? 
                 <StepBox>
+                    <h3 className="serif">Learn about Variant Fitness</h3>
+                    <p>Click on the 'Learn about Variant Fitness' button to see what 'Variant Fitness' means</p>
+                </StepBox> : null}
+                {props.step5 ? 
+                <StepBox>
                     <h3 className="serif">View the onboarding</h3>
                     <p>Click on the onboarding button to go through these tutorial steps again</p>
                 </StepBox> : null}
@@ -64,12 +64,13 @@ export default function OnboardingSteps(props) {
                          
             <OnboardingBox2>
                 <Box>
-                    {props.step1 ? <h4>1/4</h4> : null}
-                    {props.step2 ? <h4>2/4</h4> : null}
-                    {props.step3 ? <h4>3/4</h4> : null}
-                    {props.step4 ? <h4>4/4</h4> : null}
+                    {props.step1 ? <h4>1/5</h4> : null}
+                    {props.step2 ? <h4>2/5</h4> : null}
+                    {props.step3 ? <h4>3/5</h4> : null}
+                    {props.step4 ? <h4>4/5</h4> : null}
+                    {props.step5 ? <h4>5/5</h4> : null}
                 </Box>
-                {props.step4 ? 
+                {props.step5 ? 
                     (<Box sx={{display: 'flex'}}>              
                         <Button 
                         onClick={props.handleOnboardingButtonPopperClose} >
@@ -78,11 +79,11 @@ export default function OnboardingSteps(props) {
                     </Box>) : 
                     (<Box sx={{display: 'flex'}}>
                         <Button 
-                            onClick={props.step1 ? props.handleHelpButtonPopperClose : (props.step2 ? props.handleNavbarPopperClose : props.handleDataDownloadPopperClose)} 
+                            onClick={props.step1 ? props.handleHelpButtonPopperClose : (props.step2 ? props.handleNavbarPopperClose : (props.step3 ? props.handleDataDownloadPopperClose : props.handleVariantFitnessPopperClose))} 
                             sx={{color: 'inherit'}}>SKIP ALL
                         </Button>
                         <Button 
-                            onClick={props.step1 ? props.handleTutorialStep2 : (props.step2 ? props.handleTutorialStep3 : props.handleTutorialStep4)} >
+                            onClick={props.step1 ? props.handleTutorialStep2 : (props.step2 ? props.handleTutorialStep3 : (props.step3 ? props.handleTutorialStep4 : props.handleTutorialStep5))} >
                             NEXT <ChevronRightIcon />
                         </Button>
                     </Box>)}            
