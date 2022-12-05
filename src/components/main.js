@@ -1,12 +1,10 @@
 import * as React from 'react';
-import { styled, useTheme } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import IconButton from '@mui/material/IconButton';
 import Onboarding from './onboarding';
 import Help from './helpDialog';
-import {Routes, Route} from 'react-router-dom';
-import NavButtons from './navButtons';
 import { Backdrop } from '@mui/material';
 import Popper from '@mui/material/Popper';
 import Fade from '@mui/material/Fade';
@@ -19,8 +17,6 @@ const OnboardingPopper = styled(Popper)(({ theme }) => ({
   width: 'auto', 
   maxWidth: '350px', 
   padding: '10px 0px',
-  // left: '20px !important',
-  // top: '10px !important',
   '&[data-popper-placement*="right"] .MuiPopper-arrow': {
       left: 0,
       marginLeft: '-0.9em',
@@ -170,7 +166,7 @@ export default function MiniDrawer() {
     <Box sx={{ display: 'flex' }} >
       <CssBaseline />
           
-      <Box component="main" sx={{ flexGrow: 1, position: 'relative', height: window.innerHeight/* , p: 3 */ }}>  
+      <Box component="main" sx={{ flexGrow: 1, position: 'relative', height: window.innerHeight }}>  
         <div ref={dataDownloadRef} className='downloadDataAnchor'></div>   
         <Button color="inherit" onClick={handleOnboardingUserOpen} ref={onboardingButtonRef} className='onboardingButton'>Onboarding</Button>
         <IconButton
@@ -182,7 +178,7 @@ export default function MiniDrawer() {
           <HelpOutlinedIcon ref={gridHelpButtonRef}/>
         </IconButton>
       
-        <iframe id="shiny_vt" src="http://ppi-variant-dynamics-prod-39a4c5a9f260fa0a.elb.us-east-1.amazonaws.com/" /* src="http://127.0.0.1:5153" */ title="RShiny VT" height="100%"/* {window.innerHeight} */ width="100%" frameBorder="0">         
+        <iframe id="shiny_vt" src="http://ppi-variant-dynamics-prod-39a4c5a9f260fa0a.elb.us-east-1.amazonaws.com/" /* src="http://127.0.0.1:5292" */ title="RShiny VT" height="100%" width="100%" frameBorder="0">         
             <Onboarding handleTutorialStep1={handleTutorialStep1} onboardingUserOpen={onboardingUserOpen} setOnboardingUserOpen={setOnboardingUserOpen}/>
             <Help helpClicked={helpClicked} setHelpClicked={setHelpClicked}/>
         </iframe>       

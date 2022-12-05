@@ -16,8 +16,11 @@
     display: block;
     opacity: 1;
     height: auto;
-    width: 100%;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 .smallImage {
     display: block;
     opacity: 1;
@@ -54,4 +57,28 @@
 
 .skip {
     color: inherit !important;
+}
+
+@media (max-width: 700px) {
+    .image {
+        display: block;
+        opacity: 1;
+        height: auto;
+        width: 45%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .welcome {
+        color: #305252;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 24px;
+        margin-bottom: 0px;
+    }
+
+    .tourButton {
+        display: none;
+        visibility: hidden;
+    }
 }

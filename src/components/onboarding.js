@@ -102,7 +102,7 @@ export default function Onboarding(props) {
                 <DialogContent>
                     <div className={styles.dialogContent}>
                         <div className={styles.imageRoot}>
-                            <img src={Coronavirus} className={styles.image} alt='Masked elbow bump'/>
+                            <img src={Coronavirus} className={styles.image} alt='Coronavirus image'/>
                         </div>
                         <h1 className={styles.welcome}>Welcome to the Global COVID-19 Variant Tracker! </h1>
                         <h3 className={styles.dialogText}>Gain a better understanding of global SARS-CoV-2 emergence and evolutionary variant transmission dynamics 
@@ -119,7 +119,7 @@ export default function Onboarding(props) {
                             </Grid>                           
                             <Grid item xs={12} >
                                 <p >Optimal Viewing: The Variant Tracker is best viewed on a desktop, 
-                                if using a mobile phone rotate the device horizontally for best experience.</p>
+                                if using a mobile phone rotate the device horizontally for the best experience.</p>
                             </Grid>                          
                         </Grid>
                     </div>
@@ -137,8 +137,7 @@ export default function Onboarding(props) {
                         ) : <div />
                     }
                     <div>
-                        {/* <Button onClick={handleClose} className={styles.skip}>SKIP</Button> */}
-                        <Button onClick={startTutorial} sx={{color: '#305252'}}>TAKE THE TOUR</Button>
+                        <Button onClick={startTutorial} className={styles.tourButton} sx={{color: '#305252'}}>TAKE THE TOUR</Button>
                     </div>              
                     
                 </DialogActions>
