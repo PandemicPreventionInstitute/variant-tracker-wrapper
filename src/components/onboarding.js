@@ -105,9 +105,9 @@ export default function Onboarding(props) {
                             <img src={Coronavirus} className={styles.image} alt='Coronavirus image'/>
                         </div>
                         <h1 className={styles.welcome}>Welcome to the Global COVID-19 Variant Tracker! </h1>
-                        <h3 className={styles.dialogText}>Gain a better understanding of global SARS-CoV-2 emergence and evolutionary variant transmission dynamics 
+                        <h3 className={styles.dialogText1}>Gain a better understanding of global SARS-CoV-2 emergence and evolutionary variant transmission dynamics 
                          in specific regions across the world</h3> 
-                        <p className={styles.dialogText}>The Variant Tracker leverages SARS-CoV-2 sequencing data to provide users with global and 
+                        <p className={styles.dialogText2}>The Variant Tracker leverages SARS-CoV-2 sequencing data to provide users with global and 
                         country-specific transmission dynamics.The underlying model allows users to explore the latest updates on the COVID-19 variants 
                         by leveraging data from countries with high-sequencing capacity to provide real-time estimates for countries with less capacity. </p>
                         <Grid container spacing={0} sx={{justifyContent: 'center'}}>
@@ -124,7 +124,7 @@ export default function Onboarding(props) {
                         </Grid>
                     </div>
                 </DialogContent>
-                <DialogActions>
+                <DialogActions className={styles.dialogActionButtons}>
                     {isAccessible ? 
                         (
                         <div>
@@ -137,7 +137,7 @@ export default function Onboarding(props) {
                         ) : <div />
                     }
                     <div>
-                        <Button onClick={startTutorial} className={styles.tourButton} sx={{color: '#305252'}}>TAKE THE TOUR</Button>
+                        <Button onClick={startTutorial} sx={{color: '#305252'}}>TAKE THE TOUR</Button>
                     </div>              
                     
                 </DialogActions>

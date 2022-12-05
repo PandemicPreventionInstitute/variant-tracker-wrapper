@@ -50,7 +50,12 @@
     font-size: 28px;
 }
 
-.dialogText {
+.dialogText1 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.dialogText2 {
     text-align: center;
     margin-bottom: 8px;
 }
@@ -59,7 +64,7 @@
     color: inherit !important;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 770px) {
     .image {
         display: block;
         opacity: 1;
@@ -77,8 +82,14 @@
         margin-bottom: 0px;
     }
 
-    .tourButton {
+    .dialogActionButtons {
         display: none;
         visibility: hidden;
+    }
+
+    .dialogText1 {
+        text-align: center;
+        margin-bottom: 8px;
+        font-size: 16px; 
     }
 }
