@@ -35,44 +35,53 @@ const OnboardingDialog = styled(Dialog)(() => ({
     })   
 );
 
+export function delay(time, setOpen) {  
+    const timeout = setTimeout(() => setOpen(true), time);
+    return () => clearTimeout(timeout);
+}
+
 export default function Onboarding(props) {
-  const [open, setOpen] = useState(true); // onboarding dialog open/close state
-  const [checked, setChecked] = useState(false); // checkbox state for the UI
-  const [isAccessible, setIsAccessible] = useState(true); // local storage accessibility state
-  const [localCheck, setLocalCheck] = useLocalStorage("localCheck", false, setIsAccessible); // checkbox state for local storage
+    const [open, setOpen] = useState(false); // onboarding dialog open/close state
+    const [checked, setChecked] = useState(false); // checkbox state for the UI
+    const [isAccessible, setIsAccessible] = useState(true); // local storage accessibility state
+    const [localCheck, setLocalCheck] = useLocalStorage("localCheck", false, setIsAccessible); // checkbox state for local storage
 
-  const handleClose = () => {
-    setOpen(false);
-    props.setOnboardingUserOpen(false);
-    if (checked) { // set the checkbox state in local storage
-        setLocalCheck(true);
-    } else {
-        setLocalCheck(false);
+
+    useEffect(() => {
+        if (props.iframeLoaded === true) {
+            console.log('iframe loaded');
+            delay(20000, setOpen);
+        } else {
+            console.log('iframe not loaded');
+            setOpen(false);
+        }
+    }, [props.iframeLoaded]);
+    
+
+    const handleClose = () => {
+        setOpen(false);
+        props.setOnboardingUserOpen(false);
+        if (checked) { // set the checkbox state in local storage
+            setLocalCheck(true);
+        } else {
+            setLocalCheck(false);
+        }
+    };
+
+    const startTutorial = () => {
+        handleClose();
+        props.handleTutorialStep1();
     }
-  };
 
-  const startTutorial = () => {
-    handleClose();
-    props.handleTutorialStep1();
-  }
+    const handleChange = (event) => {
+        setChecked(event.target.checked); // only set the UI checkbox
+    };
 
-  const handleChange = (event) => {
-    setChecked(event.target.checked); // only set the UI checkbox
-  };
-
-  useEffect(() => {
-    if (props.onboardingUserOpen) {
-        setOpen(true);
-    }
-})
-
-//   const hideContent = (event) => {
-//     var iframe = document.getElementById("shiny_vt");
-//     const box = iframe.contentWindow.document.getElementById('variant_fitness');
-
-//     // 👇️ removes element from DOM
-//     box.style.display = 'none';
-//   };
+    useEffect(() => {
+        if (props.onboardingUserOpen) {
+            setOpen(true);
+        }
+    })
 
   if (!localCheck) {
     return ( 

@@ -81,7 +81,9 @@ export default function MiniDrawer() {
   const dataDownloadRef = React.useRef();
   const variantFitnessRef = React.useRef();
 
-  const [onboardingUserOpen, setOnboardingUserOpen] = React.useState(true);
+  const [iframeLoaded, setIframeLoaded] = React.useState(false);
+
+  const [onboardingUserOpen, setOnboardingUserOpen] = React.useState(false);
 
   const [helpButtonPopperOpen, setHelpButtonPopperOpen] = React.useState(false);
   const [onboardingButtonPopperOpen, setOnboardingButtonPopperOpen] = React.useState(false);
@@ -90,7 +92,7 @@ export default function MiniDrawer() {
   const [variantFitnessPopperOpen, setVariantFitnessPopperOpen] = React.useState(false);
 
   const [arrowRef1, setArrowRef1] = React.useState(null);
-  const [arrowRef2, setArrowRef2] = React.useState(null);
+  const [arrowRef2, setArrowRef2] = React.useState(null); 
   const [arrowRef3, setArrowRef3] = React.useState(null);
   const [arrowRef4, setArrowRef4] = React.useState(null);
   const [arrowRef5, setArrowRef5] = React.useState(null);
@@ -154,6 +156,10 @@ export default function MiniDrawer() {
     setVariantFitnessPopperOpen(false);
   }
 
+  const handleIframeLoaded = () => {
+    setIframeLoaded(true);
+  }
+
   /* Help slides */
 
   const [helpClicked, setHelpClicked] = React.useState(false);
@@ -178,8 +184,8 @@ export default function MiniDrawer() {
           <HelpOutlinedIcon ref={gridHelpButtonRef}/>
         </IconButton>
       
-        <iframe id="shiny_vt" src="http://ppi-variant-dynamics-prod-39a4c5a9f260fa0a.elb.us-east-1.amazonaws.com/" /* src="http://127.0.0.1:5292" */ title="RShiny VT" height="100%" width="100%" frameBorder="0">         
-            <Onboarding handleTutorialStep1={handleTutorialStep1} onboardingUserOpen={onboardingUserOpen} setOnboardingUserOpen={setOnboardingUserOpen}/>
+        <iframe id="shiny_vt" src="http://ppi-variant-dynamics-prod-39a4c5a9f260fa0a.elb.us-east-1.amazonaws.com/" onLoad={handleIframeLoaded} /* src="http://127.0.0.1:5292" */ title="RShiny VT" height="100%" width="100%" frameBorder="0">         
+            <Onboarding handleTutorialStep1={handleTutorialStep1} onboardingUserOpen={onboardingUserOpen} setOnboardingUserOpen={setOnboardingUserOpen} iframeLoaded={iframeLoaded}/>
             <Help helpClicked={helpClicked} setHelpClicked={setHelpClicked}/>
         </iframe>       
       </Box>
