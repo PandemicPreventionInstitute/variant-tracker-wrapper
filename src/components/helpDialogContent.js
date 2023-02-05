@@ -108,23 +108,23 @@ export default function HelpDialogContent() {
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
             <h1 className={styles.mainText}>How to Read the Variant Fitness Chart</h1>
-            <img src={VariantFitness} className={styles.image} alt='Variant fitness chart explanation'/>
+            <img src={VariantFitness} className={styles.image} alt='Explanation of weekly variant fitness advantage, using visuals displaying how the number of infections of a variant could change over time.'/>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
             <h1 className={styles.mainText}>How to Read the Variant Risk Assessment</h1>
-            <img src={VariantRisk} className={styles.image} alt='Variant risk assessment explanation'/>
+            <img src={VariantRisk} className={styles.image} alt='Explanation of how to interpret the bubble chart meant to assess the risk posed by a novel variant.'/>
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
             <h1 className={styles.mainText}>How to Read and Use the Variant Fitness Table</h1>
-            <img src={FitnessTable} className={styles.image} alt='Variant fitness table explanation'/>
+            <img src={FitnessTable} className={styles.image} alt='Explanation of how to use the variant fitness table.'/>
         </TabPanel>
         <TabPanel value={value} index={3} dir={theme.direction}>
             <h1 className={styles.mainText}>How to Read and Use the Variant Prevalence</h1>
-            <img src={Prevalence} className={styles.image} alt='Variant prevalence explanation'/>
+            <img src={Prevalence} className={styles.image} alt='Explanation of how to interpret the variant prevalence chart.'/>
         </TabPanel>
         <TabPanel value={value} index={4} dir={theme.direction}>
             <h1 className={styles.mainText}>How to Read and Use the Inferred Cases</h1>
-            <img src={Cases} className={styles.image} alt='Inferred cases explanation'/>
+            <img src={Cases} className={styles.image} alt='Explanation of how to interpret the inferred cases with a variant chart.'/>
         </TabPanel>
       </SwipeableViews>
     </Box>
